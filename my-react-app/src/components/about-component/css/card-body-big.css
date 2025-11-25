@@ -100,22 +100,18 @@ a:hover {
     font-weight: bold;
 }
 
-/* Responsive - փոքր էկրաններում սյուների հերթականությունը փոխվում է */
 @media (max-width: 1000px) {
     .content {
         flex-direction: column;
-        /* stacked դարձնում է սյուները */
         gap: 30px;
     }
 
     .right {
         order: 0;
-        /* այս մեկը վերևում */
     }
 
     .left {
         order: 1;
-        /* այս մեկը ներքևում */
     }
 
     .title {
