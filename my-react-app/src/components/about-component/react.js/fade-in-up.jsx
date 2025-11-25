@@ -15,34 +15,44 @@ const FadeInIp = () => {
     const approachRef = useRef(null);
     const isInView = useInView(approachRef, { once: true, margin: "-100px" });
 
+    const visionParagraphs = [
+        `Non sequi adipisci nostrum natus rem accusamus itaque repellendus illum neque! Voluptate, 
+         error commodi a quaerat eveniet tenetur reiciendis nulla doloremque iusto repellat quis asperiores,
+         quibusdam architecto culpa facere aliquam placeat eaque amet, nesciunt vero sunt veniam est quasi
+         doloribus optio nobis alias maiores. Nulla perferendis impedit hic doloremque iusto placeat veniam distinctio error.`,
+        `Tenetur numquam a, nesciunt neque odit amet, qui quibusdam natus assumenda quas omnis, 
+         aspernatur quisquam nobis illum ea distinctio tempora quaerat. Aperiam cumque, eveniet similique praesentium,
+         temporibus, id quis labore aspernatur quod placeat ducimus fuga consequuntur numquam autem. Voluptates repellat.`
+    ];
+
     const items = [
         {
             icon: <FaRegLightbulb />,
             title: "Talent and creativity",
             content1: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati molestiae id ipsum ipsa repudiandae.
-      Voluptatum quos facilis sequi. Ullam optio eius deleniti dolore quasi doloribus ipsam.`,
+             Voluptatum quos facilis sequi. Ullam optio eius deleniti dolore quasi doloribus ipsam.`,
             content2: `Dolores, corrupti, aliquam doloremque accusantium nemo sunt veniam est incidunt 
-      perferendis minima obcaecati ex aperiam voluptatibus blanditiis eum suscipit magnam dolorum in adipisci nihil.`
+            perferendis minima obcaecati ex aperiam voluptatibus blanditiis eum suscipit magnam dolorum in adipisci nihil.`
         },
         {
             icon: <MdOutlineDesktopMac />,
             title: "Design and code",
             content1: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit dignissimos inventore
-      cupiditate expedita saepe enim nobis nostrum? Laborum, laudantium, maiores, cupiditate,
-      perspiciatis at ad accusamus.`,
+            cupiditate expedita saepe enim nobis nostrum? Laborum, laudantium, maiores, cupiditate,
+            perspiciatis at ad accusamus.`,
             content2: `Incidunt, harum itaque voluptatum asperiores recusandae explicabo maiores. 
-      Alias, quos, ex impedit at error id laborum fugit architecto qui beatae molestiae 
-      dolorum rem veritatis quia aliquam totam.`
+            Alias, quos, ex impedit at error id laborum fugit architecto qui beatae molestiae 
+            dolorum rem veritatis quia aliquam totam.`
         },
         {
             icon: <FaUser />,
             title: "Quality and Support",
             content1: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia,
-      rerum unde doloribus accusamus pariatur non expedita quibusdam velit totam obcaecati. Consequatur, 
-      deserunt, asperiores quam nisi earum voluptates.`,
+            rerum unde doloribus accusamus pariatur non expedita quibusdam velit totam obcaecati. Consequatur, 
+            deserunt, asperiores quam nisi earum voluptates.`,
             content2: `Dolorum, aliquam, totam labore saepe error a eum culpa assumenda sint laudantium 
-      ipsa iure ullam et dicta nesciunt repellendus optio voluptatibus 
-      reprehenderit odit officia fugiat necessitatibus recusandae architecto.`
+            ipsa iure ullam et dicta nesciunt repellendus optio voluptatibus 
+            reprehenderit odit officia fugiat necessitatibus recusandae architecto.`
         }
     ];
 
@@ -65,22 +75,14 @@ const FadeInIp = () => {
             <div className="vision">
                 <h6>Our Vision</h6>
 
-                <p className="dropcap">
-                    N on sequi adipisci nostrum natus rem accusamus itaque repellendus illum neque! Voluptate,
-                    error commodi a quaerat eveniet tenetur reiciendis nulla doloremque iusto repellat quis asperiores,
-                    quibusdam architecto culpa facere aliquam placeat eaque amet, nesciunt vero sunt veniam est quasi doloribus
-                    optio nobis alias maiores. Nulla perferendis impedit hic doloremque iusto placeat veniam distinctio error.
-                </p>
-
-                <p>
-                    Tenetur numquam a, nesciunt neque odit amet, qui quibusdam natus assumenda quas omnis, aspernatur quisquam
-                    nobis illum ea distinctio tempora quaerat. Aperiam cumque, eveniet similique praesentium, temporibus,
-                    id quis labore aspernatur quod placeat ducimus fuga consequuntur numquam autem. Voluptates repellat.
-                </p>
+                {visionParagraphs.map((text, index) => (
+                    <p key={index} className={index === 0 ? "dropcap" : ""}>
+                        {text}
+                    </p>
+                ))}
 
                 <div className="author">— Sundar Pichai, CEO Google Inc.</div>
             </div>
-
             <motion.div
                 ref={approachRef}
                 className="approach"
