@@ -140,3 +140,9 @@ a:hover {
         font-size: 40px;
     }
 }
+
+@media (max-width: 400px) {
+    .about-container {
+        margin: 0;
+    }
+}
